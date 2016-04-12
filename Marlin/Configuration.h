@@ -25,7 +25,7 @@
 // startup. Implementation of an idea by Prof Braino to inform user that any changes made to this
 // build by the user have been successfully uploaded into firmware.
 #define STRING_VERSION_CONFIG_H __DATE__ " " __TIME__ // build date and time
-#define STRING_CONFIG_H_AUTHOR "(Tec3D , Config. Prusa Mendel I3)" // Who made the changes.
+#define STRING_CONFIG_H_AUTHOR "(Eduardo R. Ludovico , Config. Prusa Graber I3)" // Who made the changes.
 
 // SERIAL_PORT selects which serial port should be used for communication with the host.
 // This allows the connection of wireless adapters (for instance) to non-default port pins.
@@ -45,7 +45,7 @@
 #endif
 
 // Define this to set a custom name for your generic Mendel,
-#define CUSTOM_MENDEL_NAME "Tec3D v1.1"
+#define CUSTOM_MENDEL_NAME "ERL v1.3"
 
 // Define this to set a unique identifier for this printer, (Used by some programs to differentiate between machines)
 // You can use an online service to generate a random UUID. (eg http://www.uuidgenerator.net/version4)
@@ -394,7 +394,10 @@ const bool Z_MIN_ENDSTOP_INVERTING = true; // set to true to invert the logic of
   // these are the offsets to the probe relative to the extruder tip (Hotend - Probe)
   #define X_PROBE_OFFSET_FROM_EXTRUDER -54
   #define Y_PROBE_OFFSET_FROM_EXTRUDER 9
-  #define Z_PROBE_OFFSET_FROM_EXTRUDER -24.25 //-24
+  #define Z_PROBE_OFFSET_FROM_EXTRUDER -24.65 //-24 // 
+  // ATENCAO!Z_PROBE_OFFSET_FROM_EXTRUDER
+  // Camada de 0.4mm Z_PROBE_OFFSET_FROM_EXTRUDER -24.25
+  // Camada de 0.2mm Z_PROBE_OFFSET_FROM_EXTRUDER -24.65
 
   #define Z_RAISE_BEFORE_HOMING 25       // (in mm) Raise Z before homing (G28) for Probe Clearance.
                                         // Be sure you have this distance over your Z_MAX_POS in case
@@ -474,7 +477,10 @@ const bool Z_MIN_ENDSTOP_INVERTING = true; // set to true to invert the logic of
 
 // default settings
 
-#define DEFAULT_AXIS_STEPS_PER_UNIT   {80,80,3900,666.67}  // default steps per unit for Ultimaker // para filamento 3mm 632.00 // para filamento 1,75 666.667
+
+// Ludovico 10/04 
+//#define DEFAULT_AXIS_STEPS_PER_UNIT   {80,80,3900,665}  // default steps per unit for Ultimaker // para filamento 3mm 632.00 // para filamento 1,75 666.667
+#define DEFAULT_AXIS_STEPS_PER_UNIT   {77,79,3978,665}  // default steps per unit for Ultimaker // para filamento 3mm 632.00 // para filamento 1,75 666.667
 #define DEFAULT_MAX_FEEDRATE          {500, 500, 3, 45}    // (mm/sec)
 #define DEFAULT_MAX_ACCELERATION      {3000,3000,100,2000}    // X, Y, Z, E maximum start speed for accelerated moves. E default values are good for Skeinforge 40+, for older versions raise them a lot.
 
