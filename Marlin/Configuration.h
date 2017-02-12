@@ -45,7 +45,7 @@
 #endif
 
 // Define this to set a custom name for your generic Mendel,
-#define CUSTOM_MENDEL_NAME "ERL v1.3"
+#define CUSTOM_MENDEL_NAME "ERL v1.4"
 
 // Define this to set a unique identifier for this printer, (Used by some programs to differentiate between machines)
 // You can use an online service to generate a random UUID. (eg http://www.uuidgenerator.net/version4)
@@ -367,10 +367,10 @@ const bool Z_MIN_ENDSTOP_INVERTING = true; // set to true to invert the logic of
   #ifdef AUTO_BED_LEVELING_GRID
 
     // set the rectangle in which to probe
-    #define LEFT_PROBE_BED_POSITION 10
-    #define RIGHT_PROBE_BED_POSITION 140
-    #define BACK_PROBE_BED_POSITION 170
-    #define FRONT_PROBE_BED_POSITION 30
+    #define LEFT_PROBE_BED_POSITION 5    //10
+    #define RIGHT_PROBE_BED_POSITION 170 //140
+    #define BACK_PROBE_BED_POSITION 120  //170
+    #define FRONT_PROBE_BED_POSITION 0   //30
 
      // set the number of grid points per dimension
      // I wouldn't see a reason to go above 3 (=9 probing points on the bed)
@@ -392,9 +392,9 @@ const bool Z_MIN_ENDSTOP_INVERTING = true; // set to true to invert the logic of
 
 
   // these are the offsets to the probe relative to the extruder tip (Hotend - Probe)
-  #define X_PROBE_OFFSET_FROM_EXTRUDER -54
-  #define Y_PROBE_OFFSET_FROM_EXTRUDER 9
-  #define Z_PROBE_OFFSET_FROM_EXTRUDER -24.65 //-24 // 
+  #define X_PROBE_OFFSET_FROM_EXTRUDER -12 //-54
+  #define Y_PROBE_OFFSET_FROM_EXTRUDER -32 //9
+  #define Z_PROBE_OFFSET_FROM_EXTRUDER -19.20 //-24.50 //-24.65 //-24 // 
   // ATENCAO!Z_PROBE_OFFSET_FROM_EXTRUDER
   // Camada de 0.4mm Z_PROBE_OFFSET_FROM_EXTRUDER -24.25
   // Camada de 0.2mm Z_PROBE_OFFSET_FROM_EXTRUDER -24.65
@@ -479,8 +479,12 @@ const bool Z_MIN_ENDSTOP_INVERTING = true; // set to true to invert the logic of
 
 
 // Ludovico 10/04 
-//#define DEFAULT_AXIS_STEPS_PER_UNIT   {80,80,3900,665}  // default steps per unit for Ultimaker // para filamento 3mm 632.00 // para filamento 1,75 666.667
-#define DEFAULT_AXIS_STEPS_PER_UNIT   {77,79,3978,665}  // default steps per unit for Ultimaker // para filamento 3mm 632.00 // para filamento 1,75 666.667
+// Ludovico 07/02/2017
+//#define DEFAULT_AXIS_STEPS_PER_UNIT   {80,80,4000,660}  // default steps per unit for Ultimaker // para filamento 3mm 632.00 // para filamento 1,75 666.667
+#define DEFAULT_AXIS_STEPS_PER_UNIT   {80,72,4000,660}  // default steps per unit for Ultimaker // para filamento 3mm 632.00 // para filamento 1,75 666.667
+// Ludovico 08/02 Direct Drive MK7
+//#define DEFAULT_AXIS_STEPS_PER_UNIT   {80,80,4000,94.78}  // default steps per unit for Ultimaker // para filamento 3mm 632.00 // para filamento 1,75 666.667
+//#define DEFAULT_AXIS_STEPS_PER_UNIT   {77,79,3978,665}  // default steps per unit for Ultimaker // para filamento 3mm 632.00 // para filamento 1,75 666.667
 #define DEFAULT_MAX_FEEDRATE          {500, 500, 3, 45}    // (mm/sec)
 #define DEFAULT_MAX_ACCELERATION      {3000,3000,100,2000}    // X, Y, Z, E maximum start speed for accelerated moves. E default values are good for Skeinforge 40+, for older versions raise them a lot.
 
@@ -752,7 +756,8 @@ const bool Z_MIN_ENDSTOP_INVERTING = true; // set to true to invert the logic of
 // Use M206 command to correct for switch height offset to actual nozzle height. Store that setting with M500.
 //
 #define SERVO_ENDSTOPS {-1, -1, 0} // Servo index for X, Y, Z. Disable with -1
-#define SERVO_ENDSTOP_ANGLES {0,0, 0,0, 0,70} // X,Y,Z Axis Extend and Retract angles
+// Ludovico 06/02/2017 - Bowden
+#define SERVO_ENDSTOP_ANGLES {0,0, 0,0, 70,0} // X,Y,Z Axis Extend and Retract angles
 
 /**********************************************************************\
  * Support for a filament diameter sensor
