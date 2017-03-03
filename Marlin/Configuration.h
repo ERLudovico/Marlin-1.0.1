@@ -481,7 +481,7 @@ const bool Z_MIN_ENDSTOP_INVERTING = true; // set to true to invert the logic of
 // Ludovico 10/04 
 // Ludovico 07/02/2017
 //#define DEFAULT_AXIS_STEPS_PER_UNIT   {80,80,4000,660}  // default steps per unit for Ultimaker // para filamento 3mm 632.00 // para filamento 1,75 666.667
-#define DEFAULT_AXIS_STEPS_PER_UNIT   {80,72,4000,660}  // default steps per unit for Ultimaker // para filamento 3mm 632.00 // para filamento 1,75 666.667
+#define DEFAULT_AXIS_STEPS_PER_UNIT   {80.5,79.5,4000,660}  // default steps per unit for Ultimaker // para filamento 3mm 632.00 // para filamento 1,75 666.667
 // Ludovico 08/02 Direct Drive MK7
 //#define DEFAULT_AXIS_STEPS_PER_UNIT   {80,80,4000,94.78}  // default steps per unit for Ultimaker // para filamento 3mm 632.00 // para filamento 1,75 666.667
 //#define DEFAULT_AXIS_STEPS_PER_UNIT   {77,79,3978,665}  // default steps per unit for Ultimaker // para filamento 3mm 632.00 // para filamento 1,75 666.667
